@@ -52,6 +52,7 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+bd_structure.txt
 
 # Microbundle cache
 .rpt2_cache/
