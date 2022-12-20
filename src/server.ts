@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import fileupload from "express-fileupload";
 import { mongodbConnect } from './database/mongodb';
+import apiRoutes from './routes/routes';
 
 mongodbConnect();
 
@@ -14,9 +15,7 @@ server.use(fileupload());
 
 server.use(express.static(__dirname+'../public'));
 
-server.get('/ping', (req: Request, res: Response) => {
-    res.json({pong: true});
-});
+server.use('/', apiRoutes);
 
 server.listen(process.env.PORT, () =>{
     console.log("Server rodando no endereço: ", process.env.BASE);

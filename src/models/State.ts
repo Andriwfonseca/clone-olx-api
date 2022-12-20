@@ -1,4 +1,4 @@
-import { Schema, model, connection } from 'mongoose';
+import { Schema, model, connection, Model } from 'mongoose';
 
 type StateType = {
     name: string
@@ -10,4 +10,6 @@ const schema = new Schema<StateType>({
 
 const modelName = 'State';
 
-export default (connection && connection.models[modelName]) ? connection.models[modelName] : model<StateType>(modelName, schema);
+const stateModel = connection && connection.models[modelName] ? (connection.models[modelName] as Model<StateType>) : model<StateType>(modelName, schema)
+
+export default stateModel;

@@ -1,4 +1,4 @@
-import { Schema, model, connection } from 'mongoose';
+import { Schema, model, connection, Model } from 'mongoose';
 
 type AdType = {
     idUser: string,
@@ -30,4 +30,6 @@ const schema = new Schema<AdType>({
 
 const modelName = 'Ad';
 
-export default (connection && connection.models[modelName]) ? connection.models[modelName] : model<AdType>(modelName, schema);
+const adModel = connection && connection.models[modelName] ? (connection.models[modelName] as Model<AdType>) : model<AdType>(modelName, schema)
+
+export default adModel;
