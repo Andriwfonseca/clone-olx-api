@@ -3,10 +3,9 @@ import * as AdController from '../controllers/AdController';
 import * as AuthController from '../controllers/AuthController';
 import * as UserController from '../controllers/UserController';
 import { Auth } from '../middlewares/Auth';
+import { AuthValidator } from '../validators/AuthValidator';
 
 const router = Router();
-
-
 
 router.get('/ping', (req: Request, res: Response) => {
     res.json({pong: true});
@@ -15,7 +14,7 @@ router.get('/ping', (req: Request, res: Response) => {
 router.get('/states', UserController.getStates);
 
 router.post('/user/signin', AuthController.signin);
-router.post('/user/signup', AuthController.signup);
+router.post('/user/signup', AuthValidator.signup, AuthController.signup);
 
 router.get('/user/me', Auth, UserController.getInfo);
 router.put('/user/me', Auth, UserController.editAction);
