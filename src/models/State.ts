@@ -1,8 +1,5 @@
 import { Schema, model, connection, Model } from 'mongoose';
-
-type StateType = {
-    name: string
-}
+import { StateType } from '../types/StateType';
 
 const schema = new Schema<StateType>({
     name: { type: String, required: true } 

@@ -3,24 +3,9 @@ import Ad from "../models/Ad";
 import Category from "../models/Category";
 import State from "../models/State";
 import User from "../models/User";
-
-type UserType = {
-    _id: string,
-    name: string,
-    email: string,
-    state: string,
-    passwordHash: string,
-    token: string
-}
-
-type StateType = {
-    name: string
-}
-
-type CategoryType = {
-    name: string,
-    slug: string
-}
+import { CategoryType } from "../types/CategoryType";
+import { StateType } from "../types/StateType";
+import { UserType } from "../types/UserType";
 
 export const UserController = {
     getStates: async (req: Request, res: Response) =>{

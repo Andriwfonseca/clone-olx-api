@@ -1,9 +1,5 @@
 import { Schema, model, connection, Model } from 'mongoose';
-
-type CategoryType = {
-    name: string,
-    slug: string
-}
+import { CategoryType } from '../types/CategoryType';
 
 const schema = new Schema<CategoryType>({
     name: { type: String, required: true } ,

@@ -1,18 +1,5 @@
 import { Schema, model, connection, Model } from 'mongoose';
-
-type AdType = {
-    idUser: string,
-    state: string,
-    category: string,
-    images: [{}],
-    dateCreated: Date,
-    title: string,
-    price: number,
-    priceNegociable: boolean,
-    description: string,
-    views: number,
-    status: string
-}
+import { AdType } from '../types/AdType';
 
 const schema = new Schema<AdType>({
     idUser: { type: String, required: true } ,
