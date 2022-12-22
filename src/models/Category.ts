@@ -12,6 +12,6 @@ const schema = new Schema<CategoryType>({
 
 const modelName = 'Category';
 
-const categoryModel = connection && connection.models[modelName] ? (connection.models[modelName] as Model<CategoryType>) : model<CategoryType>(modelName, schema)
+const Category = connection && connection.models[modelName] ? (connection.models[modelName] as Model<CategoryType>) : model<CategoryType>(modelName, schema)
 
-export default categoryModel;
+export default Category;

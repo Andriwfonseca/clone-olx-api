@@ -30,6 +30,6 @@ const schema = new Schema<AdType>({
 
 const modelName = 'Ad';
 
-const adModel = connection && connection.models[modelName] ? (connection.models[modelName] as Model<AdType>) : model<AdType>(modelName, schema)
+const Ad = connection && connection.models[modelName] ? (connection.models[modelName] as Model<AdType>) : model<AdType>(modelName, schema)
 
-export default adModel;
+export default Ad;

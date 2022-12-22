@@ -10,6 +10,6 @@ const schema = new Schema<StateType>({
 
 const modelName = 'State';
 
-const stateModel = connection && connection.models[modelName] ? (connection.models[modelName] as Model<StateType>) : model<StateType>(modelName, schema)
+const State = connection && connection.models[modelName] ? (connection.models[modelName] as Model<StateType>) : model<StateType>(modelName, schema)
 
-export default stateModel;
+export default State;

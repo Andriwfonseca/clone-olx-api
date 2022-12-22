@@ -18,6 +18,6 @@ const schema = new Schema<UserType>({
 
 const modelName = 'User';
 
-const userModel = connection && connection.models[modelName] ? (connection.models[modelName] as Model<UserType>) : model<UserType>(modelName, schema)
+const User = connection && connection.models[modelName] ? (connection.models[modelName] as Model<UserType>) : model<UserType>(modelName, schema)
 
-export default userModel;
+export default User;
