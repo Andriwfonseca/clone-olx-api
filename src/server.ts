@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import fileupload from "express-fileupload";
 import { mongodbConnect } from './database/mongodb';

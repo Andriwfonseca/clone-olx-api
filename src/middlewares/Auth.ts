@@ -5,7 +5,7 @@ export const Auth = {
     
     private: async (req: Request, res: Response, next: NextFunction) => {     
 
-        if(!req.query.token && !req.body.token){
+        if(!req.query.token){
             res.status(401);
             res.json({notallowed: true});
             return;

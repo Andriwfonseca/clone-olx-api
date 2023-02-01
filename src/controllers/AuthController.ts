@@ -16,6 +16,7 @@ export const AuthController = {
         }
     
         const data = matchedData(req);
+
     
         //validando o e-mail
         const user = await User.findOne({ email: data.email });
@@ -40,14 +41,15 @@ export const AuthController = {
         res.json({token: token, email: data.email});
     },
     signup: async (req: Request, res: Response) =>{
-        const erros = validationResult(req);
-    
-        if(!erros.isEmpty()){
-            res.json({error: erros.mapped()});
+        const errors = validationResult(req);
+        
+        if(!errors.isEmpty()){
+            res.json({error: errors.mapped()});
             return;
         }
-    
+        
         const data = matchedData(req);
+        console.log(data)
     
         //verificando se email ja existe
         const user = await User.findOne({
